@@ -1,8 +1,8 @@
-%define commit %(git describe --match 'pm_monitor_*' | sed -e 's/pm_monitor_//')
+%define commit %(git rev-parse --short=8 HEAD)
 
 Summary: University of Wisconsin Power Module Monitor
 Name: pm_monitor
-Version: %(git describe --match 'pm_monitor_*' | sed -e 's/pm_monitor_v//;s/-/./g')
+Version: %(git describe --dirty --match='v*.*.*' | sed -re 's/^v//;s/-dirty/-d/;s/-/./g')
 Release: 1%{?dist}
 #Release: 1%{?dist}.%(git rev-parse --abbrev-ref HEAD | sed s/-/_/g)
 #BuildArch: %{_buildarch}
