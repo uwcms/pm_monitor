@@ -5,6 +5,11 @@ export PM_MON_SMTP_PASSWORD=
 export PM_MON_SMTP_FROM=
 export PM_MON_SMTP_TO=
 
+
+#export PM_MON_SYSMGR_HOST=127.0.0.1
+#export PM_MON_SYSMGR_PASS=''
+#export PM_MON_SYSMGR_PORT=4681
+
 # Print events to console
 #export PM_MON_VERBOSE=1
 

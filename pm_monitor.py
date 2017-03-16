@@ -137,7 +137,11 @@ def get_current_total(s, crate, pm):
 	return total
 
 def run_monitor(alertmgr):
-	s = sysmgr.Sysmgr()
+	s = sysmgr.Sysmgr(
+			host=os.environ.get('PM_MON_SYSMGR_HOST','127.0.0.1'),
+			password=os.environ.get('PM_MON_SYSMGR_PASS',''),
+			int(port=os.environ.get('PM_MON_SYSMGR_PORT','4681'))
+			) # Reconnect possibly required.
 	monitored_crates = os.environ.get('PM_MON_CRATES', 'ALL')
 	if monitored_crates != 'ALL':
 		monitored_crates = set(map(lambda x: int(x), monitored_crates.split(',')))
@@ -164,7 +168,11 @@ def run_monitor(alertmgr):
 			except Exception as e:
 				print('{e} occured during scan of crate {crate.number}'.format(e=repr(e), crate=crate))
 				print('\n'+''.join(traceback.format_exception(type(e), e, e.__traceback__))+'\n')
-				s = sysmgr.Sysmgr() # Reconnect possibly required.
+				s = sysmgr.Sysmgr(
+						host=os.environ.get('PM_MON_SYSMGR_HOST','127.0.0.1'),
+						password=os.environ.get('PM_MON_SYSMGR_PASS',''),
+						int(port=os.environ.get('PM_MON_SYSMGR_PORT','4681'))
+						) # Reconnect possibly required.
 		time.sleep(int(os.environ.get('PM_MON_SAMPLING_INTERVAL','60')))
 
 if __name__ == '__main__':
