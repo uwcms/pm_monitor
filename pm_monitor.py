@@ -140,7 +140,7 @@ def run_monitor(alertmgr):
 	s = sysmgr.Sysmgr(
 			host=os.environ.get('PM_MON_SYSMGR_HOST','127.0.0.1'),
 			password=os.environ.get('PM_MON_SYSMGR_PASS',''),
-			int(port=os.environ.get('PM_MON_SYSMGR_PORT','4681'))
+			port=int(os.environ.get('PM_MON_SYSMGR_PORT','4681'))
 			) # Reconnect possibly required.
 	monitored_crates = os.environ.get('PM_MON_CRATES', 'ALL')
 	if monitored_crates != 'ALL':
@@ -171,7 +171,7 @@ def run_monitor(alertmgr):
 				s = sysmgr.Sysmgr(
 						host=os.environ.get('PM_MON_SYSMGR_HOST','127.0.0.1'),
 						password=os.environ.get('PM_MON_SYSMGR_PASS',''),
-						int(port=os.environ.get('PM_MON_SYSMGR_PORT','4681'))
+						port=int(os.environ.get('PM_MON_SYSMGR_PORT','4681'))
 						) # Reconnect possibly required.
 		time.sleep(int(os.environ.get('PM_MON_SAMPLING_INTERVAL','60')))
 
