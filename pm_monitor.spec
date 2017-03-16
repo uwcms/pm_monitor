@@ -71,4 +71,4 @@ rm -rf %{buildroot}
 
 #%changelog
 
-%debug_package
+#%%debug_package
