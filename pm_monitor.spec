@@ -11,7 +11,7 @@ Group: Applications/XDAQ
 #Source: http://github.com/uwcms/sysmgr-tools/archive/%{commit}/sysmgr-tools-%{commit}.tar.gz
 URL: https://github.com/uwcms/sysmgr-tools
 BuildRoot: %{PWD}/rpm/buildroot
-Requires: sysmgr >= 1.1.4, procps
+Requires: python34-sysmgr >= 1.1.5, procps
 #Prefix: /usr
 
 %description
