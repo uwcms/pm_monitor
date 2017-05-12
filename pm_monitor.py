@@ -14,7 +14,7 @@ import traceback
 class LoadShareReading(object):
 	PM_LOAD_SUM_THRESHOLD  = int(os.environ.get('PM_MON_LOAD_SUM_THRESHOLD','16'))
 	PM_LOAD_SHARE_WARNING  = float(os.environ.get('PM_MON_LOAD_SHARE_WARNING_LEVEL','0.6'))
-	PM_LOAD_SHARE_CRITICAL = float(os.environ.get('PM_MON_LOAD_SHARE_WARNING_LEVEL','0.7'))
+	PM_LOAD_SHARE_CRITICAL = float(os.environ.get('PM_MON_LOAD_SHARE_CRITICAL_LEVEL','0.7'))
 
 	def __init__(self, pm1_amps, pm2_amps, timestamp):
 		self.pm1_amps = pm1_amps

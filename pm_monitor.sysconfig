@@ -26,7 +26,7 @@ export PM_MON_LOGFILE=/var/log/pm_monitor.csv
 
 # Alert if any PM has >= this percent of the load share.
 #export PM_MON_LOAD_SHARE_WARNING_LEVEL=0.6
-#export PM_MON_LOAD_SHARE_WARNING_LEVEL=0.7
+#export PM_MON_LOAD_SHARE_CRITICAL_LEVEL=0.7
 
 # Number of recent readings to track
 #export PM_MON_RECENT_READINGS=12
